@@ -9,9 +9,5 @@ export default function getImgGallery(imagesEl) {
   });
   const url = `${BASE_URL}?${params}`;
 
-  return fetch(url)
-    .then(res => res.json())
-    .catch(error => {
-      console.log(error);
-    });
+  return fetch(url).then(res => res.json());
 }
