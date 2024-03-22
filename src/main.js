@@ -14,6 +14,11 @@ const refs = {
 
 refs.loader.style.display = "none";
 
+const gallery = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
+
 refs.imgGalleryForm.addEventListener("submit", e => {
   e.preventDefault();
 
@@ -40,11 +45,6 @@ refs.imgGalleryForm.addEventListener("submit", e => {
         const createCollection = createImgGallery(data.hits);
 
         refs.galleryContainer.insertAdjacentHTML("beforeend", createCollection);
-
-        const gallery = new SimpleLightbox(".gallery a", {
-          captionsData: "alt",
-          captionDelay: 250,
-        });
 
         gallery.refresh();
 
